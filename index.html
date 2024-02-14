@@ -13,13 +13,13 @@
 <body class="bg-black">
     <main class="bg-[url('images/background.png')] bg-no-repeat h-screen bg-center bg-contain">
         <!-- first section -->
-        <div class="flex flex-col justify-center items-center h-screen border text-white ">
+        <div id="first-div" class="flex flex-col justify-center items-center h-screen border text-white ">
             <h1 class="uppercase text-7xl font-bold py-4">Alphabet Clash</h1>
             <p>Unleash your keyboard kung fu : press "Enter" to play</p>
-            <button class="border px-4 py-2 bg-white text-black font-bold rounded-2xl mt-4">Play Now</button>
+            <button onclick="startPlay()" class="border px-4 py-2 bg-white text-black font-bold rounded-2xl mt-4">Play Now</button>
         </div>
         <!-- second section -->
-        <div class="text-center hidden">
+        <div id="second-div" class="text-center hidden">
             <div class="flex flex-col items-center pt-16">
                 <div class="bg-[#FFFFFFB3] h-[200px] w-[60%] mx-auto rounded-xl border-8 border-black">
                     <div class="text-center bg-black text-white w-[50%] mx-auto py-2 rounded-b-xl">
