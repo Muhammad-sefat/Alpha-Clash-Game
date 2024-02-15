@@ -11,13 +11,17 @@ function startPlay(){
 function continuePlay(){
     const alphabet = getRandomAlphabets();
     const showAlphabet = document.getElementById('show-alphabet');
-    showAlphabet.innerText = alphabet;
-
+     showAlphabet.innerText = alphabet;
     setRandomColor(alphabet);
 }
 
+
 document.addEventListener('keyup', function(event){
     const playerPressed = event.key;
+
+    if(playerPressed === "Escape"){
+        gameOver()
+    }
 
     const currentAlphabets = document.getElementById('show-alphabet');
     const currentAlphabet = currentAlphabets.innerText;
@@ -58,6 +62,10 @@ function gameOver(){
     addElementById('second-div')
     const currentScore = getNumberElementById('current-score');
     setNumberElementById('final-score', currentScore);
+
+    const currentAlphabet = getElementTextById('show-alphabet');
+    removeRandomColor(currentAlphabet);
+   
 }
 
 
@@ -68,6 +76,12 @@ function setRandomColor(elementId){
 function removeRandomColor(elementId){
     let element = document.getElementById(elementId)
     element.classList.remove('bg-orange-400');
+}
+
+function  getElementTextById(element){
+    const elementText = document.getElementById(element);
+    const text = elementText.innerText;
+    return text;
 }
 
 function addElementById(elementId){
